@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="default-carousel" class="relative mt-5" data-carousel="static">
+        <div id="default-carousel" class="relative mt-5 px-5" data-carousel="static">
             <div class="relative h-56 overflow-hidden rounded-lg">
                 <div class="loading absolute inset-0 z-20" v-for="item in items" :key="item.id" :style="item.style">
                     <img src="@/assets/img/carsImg.png" width="430px" class="absolute block -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">

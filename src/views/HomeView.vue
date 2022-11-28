@@ -3,7 +3,7 @@
         <navbar-menu></navbar-menu>
         <carousel-benz></carousel-benz>
         <find-car-form></find-car-form>
-        <!--       <product-carousel></product-carousel>-->
+               <product-carousel></product-carousel>
         <cars-services></cars-services>
         <special-products></special-products>
         <call-center></call-center>
@@ -32,10 +32,12 @@ import CallCenter from "@/components/callCenter";
 import SpecialProduct2 from "@/components/specialProduct2";
 import TrustUs from "@/components/trustUs";
 import FooterBox from "@/components/footer";
+import ProductCarousel from "@/components/productCarousel";
 
 export default {
     name: 'HomeView',
     components: {
+        ProductCarousel,
         FooterBox,
         TrustUs,
         SpecialProduct2,
