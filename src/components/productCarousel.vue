@@ -9,9 +9,10 @@
                 </div>
             </div>
 
-            <div class="owl-carousel owl-theme relative grid grid-cols-4 h-56 overflow-hidden rounded-lg">
-                <div class="item" v-for="item in items" :key="item.src">
-                    <img :src="item.src" :alt="item.alt">
+            <div class="owl-carousel owl-theme relative mx-5 mb-10 mt-7 overflow-hidden rounded-lg">
+                <div class="item slideBox" v-for="item in items" :key="item.src">
+                     <img :src="item.src" :alt="item.alt">
+                    <h6 class="text-center font-bold mx-auto pt-8">{{item.text}}</h6>
                 </div>
             </div>
 
@@ -75,6 +76,7 @@ export default {
     background: #FFFFFF;
     box-shadow: 0px 3px 20px rgba(215, 215, 215, 0.25);
     border-radius: 15px;
-    border: 1px solid red;
+    width: 4.5rem;
 }
+
 </style>

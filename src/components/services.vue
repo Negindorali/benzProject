@@ -1,12 +1,11 @@
 <template>
     <div>
-        <div class="grid grid-cols-2 mb-10 items-center w-full">
+        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 mb-10 items-center w-full">
             <div :key="index" v-for="(item,index) in services" :style="{'background-image':'url(' + item.img + ')'}" class="serviceBox bg-local m-2 relative">
                 <div class="py-4 text-center descBox text-white">
                     {{ item.desc }}
                 </div>
             </div>
-
         </div>
     </div>
 </template>
@@ -30,8 +29,8 @@ export default {
 <style scoped>
 .serviceBox {
     background-repeat: no-repeat;
-    background-position: center;
     height: 151px;
+    background-size: 100% 100%;
     filter: drop-shadow(0px 2px 20px rgba(225, 225, 225, 0.25));
     border-radius: 21.8618px;
 }

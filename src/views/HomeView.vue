@@ -47,12 +47,14 @@ export default {
             loading: false,
             items: [
                 {
-                    src: "https://avatars.mds.yandex.net/i?id=c7baa5884d8113e9ba67903bbae5ab5fa08536c8-4521347-images-thumbs&n=13",
-                    alt: "salam kimiya"
+                    src: require("@/assets/img/g_class_-_gclasssuv3.png"),
+                    alt: "...",
+                    text:'SL C lass'
                 },
                 {
                     src: require("@/assets/img/g_class_-_gclasssuv2.png"),
-                    alt: "salam negin"
+                    alt: "...",
+                    text:'G C lass'
                 }
             ]
         }
