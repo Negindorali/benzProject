@@ -3,7 +3,7 @@
         <navbar-menu></navbar-menu>
         <carousel-benz></carousel-benz>
         <find-car-form></find-car-form>
-               <product-carousel></product-carousel>
+               <product-carousel :items="items"></product-carousel>
         <cars-services></cars-services>
         <special-products></special-products>
         <call-center></call-center>
@@ -44,7 +44,17 @@ export default {
         CallCenter, SpecialProducts, CarsServices, FindCarForm, CarouselBenz, NavbarMenu, LoadingComponents},
     data() {
         return {
-            loading: false
+            loading: false,
+            items: [
+                {
+                    src: "https://avatars.mds.yandex.net/i?id=c7baa5884d8113e9ba67903bbae5ab5fa08536c8-4521347-images-thumbs&n=13",
+                    alt: "salam kimiya"
+                },
+                {
+                    src: require("@/assets/img/g_class_-_gclasssuv2.png"),
+                    alt: "salam negin"
+                }
+            ]
         }
     },
     created() {

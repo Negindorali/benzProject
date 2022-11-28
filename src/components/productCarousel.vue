@@ -4,14 +4,14 @@
             <div class="flex px-3">
                 <p class="text-right">قطعات مرسدس بنز با کلاس</p>
                 <div class="absolute z-20 flex -translate-x-1/2 gap-1 mb-4 buttonsGroups">
-                    <button type="button" class="px-3 py-2  buttonDes"><span><img src="@/assets/img/right.svg" alt=""></span></button>
-                    <button type="button" class="px-3 py-2 mx-2 buttonDes"><span><img src="@/assets/img/left.svg" alt=""></span></button>
+                    <button @click="slider('next')" type="button" class="px-3 py-2  buttonDes"><span><img src="@/assets/img/right.svg" alt=""></span></button>
+                    <button @click="slider('prev')" type="button" class="px-3 py-2 mx-2 buttonDes"><span><img src="@/assets/img/left.svg" alt=""></span></button>
                 </div>
             </div>
-            <div class="relative grid grid-cols-4 h-56 overflow-hidden rounded-lg">
-                <div class="loading slideBox absolute inset-0 z-20" v-for="(item,index) in 6" :key="index" >
-                    <img src="@/assets/img/g_class_-_gclasssuv2.png"
-                         class="absolute block -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
+
+            <div class="owl-carousel owl-theme relative grid grid-cols-4 h-56 overflow-hidden rounded-lg">
+                <div class="item" v-for="item in items" :key="item.src">
+                    <img :src="item.src" :alt="item.alt">
                 </div>
             </div>
 
@@ -20,52 +20,42 @@
 </template>
 
 <script>
+window.$ = window.jquery = window.jQuery = require("jquery");
+
+import 'owl.carousel/dist/assets/owl.carousel.min.css';
+
+let owl_carousel = require('owl.carousel');
+
+window.fn = owl_carousel;
 
 export default {
     name: "productCarousel",
+    props: {
+        items: {
+            required: true,
+            type: Array
+        }
+    },
     data() {
         return {
-            items: [
-                {
-                    id: 1,
-                    color: "#FCB812",
-                    style: {
-                        display: "block"
-                    }
-                },
-                {
-                    id: 2,
-                    color: "#FCB812",
-                    style: {
-                        display: "none"
-                    }
-                },
-                {
-                    id: 3,
-                    color: "#FCB812",
-                    style: {
-                        display: "none"
-                    }
-                },
-            ],
-            timer: null,
-            current: 1,
+            owl: null
+        }
+    },
+    methods: {
+        slider(direction) {
+            this.owl.trigger(`${direction}.owl.carousel`);
         }
     },
     mounted() {
-        this.timer = setInterval(() => {
-            this.items.find(x => x.id === this.current).style.display = "none";
-
-            this.current++;
-
-            if (this.current > this.items.length)
-                this.current = 1;
-
-            this.items.find(x => x.id === this.current).style.display = "block";
-        }, 2000);
-    },
-    destroyed() {
-        clearInterval(this.timer);
+        // eslint-disable-next-line no-undef
+        $(document).ready(() => {
+            // eslint-disable-next-line no-undef
+            this.owl = $('.owl-carousel').owlCarousel({
+                margin: 10,
+                rtl: true,
+                loop: true
+            });
+        });
     }
 }
 </script>
