@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="grid grid-cols-2 md:grid-cols-4 lg:grid-cols-6 mb-10 items-center w-full">
+        <div class="grid grid-cols-2 md:grid-cols-4 px-2 lg:grid-cols-6 mb-10 items-center w-full">
             <div :key="index" v-for="(item,index) in services" :style="{'background-image':'url(' + item.img + ')'}" class="serviceBox bg-local m-2 relative">
                 <div class="py-4 text-center descBox text-white">
                     {{ item.desc }}
@@ -16,10 +16,10 @@ export default {
     data() {
         return {
             services:[
-                {serviceID:'',desc:'امداد اورژانسی',img:require('@/assets/img/Rectangle37.png')},
-                {serviceID:'',desc:'امداد حمل',img:require('@/assets/img/Rectangle38.png')},
-                {serviceID:'',desc:'سرویس در محل',img:require('@/assets/img/Rectangle39.png')},
-                {serviceID:'',desc:'خدمات تعمیرگاهی',img:require('@/assets/img/Rectangle40.png')},
+                {serviceID:'',desc:'امداد اورژانسی',img:require('@/assets/img/Rectangle38.png')},
+                {serviceID:'',desc:'امداد حمل',img:require('@/assets/img/Rectangle39.png')},
+                {serviceID:'',desc:'سرویس در محل',img:require('@/assets/img/Rectangle40.png')},
+                {serviceID:'',desc:'خدمات تعمیرگاهی',img:require('@/assets/img/Rectangle37.png')},
             ]
         }
     }
