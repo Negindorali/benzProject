@@ -1,12 +1,8 @@
 <template>
     <div>
-        <div id="default-carousel" class="relative mt-5 px-5" data-carousel="static">
-            <div class="relative h-56 overflow-hidden rounded-lg">
-                <div class="loading absolute inset-0 z-20" v-for="item in items" :key="item.id" :style="item.style">
-                    <img src="@/assets/img/carsImg.png" width="430px" class="absolute block -translate-x-1/2 -translate-y-1/2 top-1/2 left-1/2" alt="...">
-                </div>
-            </div>
-            <div class="absolute z-20 flex -translate-x-1/2 gap-1 bottom-5 mb-2 left-1/2">
+        <div id="default-carousel" class="mt-10">
+            <img class="loading rounded-lg mx-auto" :src="item.src" alt="..." v-for="item in items" :key="item.id" :style="item.style">
+            <div class="flex gap-1 max-w-fit mt-[-15px] mx-auto z-20 relative">
                 <button type="button" class="rounded-full" :class="{'w-4 h-0.2 bg-white':current===1,'w-1 h-1 bg-white':current!==1}"></button>
                 <button type="button" class="rounded-full" :class="{'w-4 h-0.2 bg-white':current===2,'w-1 h-1 bg-white':current!==2}"></button>
                 <button type="button" class="rounded-full" :class="{'w-4 h-0.2 bg-white':current===3,'w-1 h-1 bg-white':current!==3}"></button>
@@ -24,6 +20,7 @@ export default {
                 {
                     id: 1,
                     color: "#FCB812",
+                    src: "https://gamervip.net/wp-content/uploads/2021/11/241045287_1733898810333571_5729143874879046218_n-1392x727.jpg",
                     style: {
                         display: "block"
                     }
@@ -31,6 +28,7 @@ export default {
                 {
                     id: 2,
                     color: "#FCB812",
+                    src: "https://redcapes.it/wp-content/uploads/2020/08/Ryan-Reynolds-Dwayne-Johnson-Black-Adam-1392x727.jpg",
                     style: {
                         display: "none"
                     }
@@ -38,6 +36,7 @@ export default {
                 {
                     id: 3,
                     color: "#FCB812",
+                    src: "https://redcapes.it/wp-content/uploads/2019/07/mindhunter-1-e1619085314476-1392x727.jpg",
                     style: {
                         display: "none"
                     }
