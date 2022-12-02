@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="grid grid-cols-2 md:grid-cols-4 px-2 lg:grid-cols-6 mb-10 items-center w-full">
+        <div class="grid grid-cols-2 md:grid-cols-4 px-2 mb-10 items-center w-full">
             <div :key="index" v-for="(item,index) in services" :style="{'background-image':'url(' + item.img + ')'}" class="serviceBox bg-local m-2 relative">
                 <div class="py-4 text-center descBox text-white">
                     {{ item.desc }}
@@ -27,6 +27,11 @@ export default {
 </script>
 
 <style scoped>
+@media  (min-width: 768px) {
+    .serviceBox{
+        height: 237px !important;
+    }
+}
 .serviceBox {
     background-repeat: no-repeat;
     height: 151px;

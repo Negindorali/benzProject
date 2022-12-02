@@ -1,7 +1,9 @@
 <template>
     <div>
-        <div class="grid grid-cols-2 mb-5 items-center px-5 w-full">
-            <div :key="index" v-for="(item,index) in services" class="m-2 mainBox overflow-hidden mx-5 my-7 pt-3 cursor-pointer">
+        <h6 class="mx-7 text-right">محصولات  ویژه</h6>
+
+        <div class="grid grid-cols-2 md:grid-cols-4 mb-5 items-center px-5 w-full">
+            <div :key="index" v-for="(item,index) in services" class="m-2 mainBox overflow-hidden mx-5 my-7 pt-3 cursor-pointer md:p-4 md:pt-12">
                 <img :src="item.img" class="mx-auto" alt="">
                 <h4 class="mb-4 mt-2">{{item.title}}</h4>
                 <div class="flex">
