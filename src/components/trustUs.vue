@@ -8,6 +8,12 @@
                 <p class="text-right text-justify pb-3 mx-5 md:leading-[38.75px]">
                     قطعات اورجینال مرسدس بنز با خودروی شما مطابقت دارند که دیگران نمی توانند. آنها به طور خاص برای عملکرد با قطعات و سیستم های دیگر طراحی شده اند و از بهترین مواد موجود ساخته شده اند. آنها همچنین تحت آزمایش های دقیق قرار می گیرند، به این معنی که هر قسمت به طور کامل گواهی می شود. در پایان، می‌توانید مطمئن باشید که وسیله نقلیه شما، مایل به مایل، حداکثر بالقوه‌اش عمل خواهد کرد.
                 </p>
+
+                <div>
+                    <button class="my-3 float-right text-white flex showMore focus:outline-none text-sm px-8 mr-3 py-2 text-center">
+                       درباره ما
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -20,5 +26,8 @@ export default {
 </script>
 
 <style scoped>
-
+.showMore{
+    background: #000000;
+    border-radius: 14.5668px;
+}
 </style>

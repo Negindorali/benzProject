@@ -20,7 +20,7 @@ export default {
                 {
                     id: 1,
                     color: "#FCB812",
-                    src: "https://gamervip.net/wp-content/uploads/2021/11/241045287_1733898810333571_5729143874879046218_n-1392x727.jpg",
+                    src: require('@/assets/img/banner.png'),
                     style: {
                         display: "block"
                     }
@@ -28,7 +28,7 @@ export default {
                 {
                     id: 2,
                     color: "#FCB812",
-                    src: "https://redcapes.it/wp-content/uploads/2020/08/Ryan-Reynolds-Dwayne-Johnson-Black-Adam-1392x727.jpg",
+                    src: require('@/assets/img/banner.png'),
                     style: {
                         display: "none"
                     }
@@ -36,7 +36,7 @@ export default {
                 {
                     id: 3,
                     color: "#FCB812",
-                    src: "https://redcapes.it/wp-content/uploads/2019/07/mindhunter-1-e1619085314476-1392x727.jpg",
+                    src: require('@/assets/img/banner.png'),
                     style: {
                         display: "none"
                     }

@@ -1,10 +1,9 @@
 <template>
     <div>
         <h6 class="mx-7 text-right">لوازم جانبی و قطعات برتر</h6>
-
-        <div class="grid grid-cols-1 md:grid-cols-4">
+        <div class="grid grid-cols-1 md:grid-cols-3">
             <div class="mainBox overflow-hidden mx-5 my-7 pb-10 pt-3 cursor-pointer" v-for="(item,index) in productInfo" :key="index">
-                <img :src="item.img" class="mx-auto" alt="" width="430px" style="border-radius: 25px">
+                <img :src="item.img" class="mx-auto px-0" alt="" width="430px" style="border-radius: 25px">
                 <h5 class="my-3 mt-5 mx-5">{{ item.titleProduct }}</h5>
                 <p class="subtitles py-3 mx-5" v-for="(text,key) in item.options" :key="key">{{ text }}</p>
                 <button type="submit" :key="item.titleProduct"
@@ -30,16 +29,6 @@ export default {
                         'بدنه دریچه گاز',
                     ],
                     titleProduct: 'ورودی هوا و تحویل سوخت',
-                    img: require('@/assets/img/AirintakeandFuelDelivery.png')
-                },
-                {
-                    options: [
-                        'سیستم های ورودی هوا',
-                        'انژکتورهای سوخت',
-                        'حسگرها',
-                        'بدنه دریچه گاز',
-                    ],
-                    titleProduct: 'ورودی هوا و تحویل سوخت',
                     img: require('@/assets/img/AirintakeandFuelDelivery2.png')
                 },
                 {
@@ -50,7 +39,7 @@ export default {
                         'بدنه دریچه گاز',
                     ],
                     titleProduct: 'ورودی هوا و تحویل سوخت',
-                    img: require('@/assets/img/AirintakeandFuelDelivery.png')
+                    img: require('@/assets/img/AirintakeandFuelDelivery1.png')
                 },
                 {
                     options: [

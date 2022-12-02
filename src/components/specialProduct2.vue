@@ -8,12 +8,17 @@
                 <h4 class="mb-4 mt-2">{{item.title}}</h4>
                 <div class="flex">
                     <p class="my-3 price">{{item.price}}تومان</p>
-                    <button type="submit" class="my-3 text-white flex buyBtn mr-auto focus:outline-none text-sm px-3 py-1 text-center">
+                    <button class="my-3 text-white flex buyBtn mr-auto focus:outline-none text-sm px-3 py-1 text-center">
                         خرید
                         <img src="@/assets/img/buyIcon.svg" class="mr-2" alt=""/>
                     </button>
                 </div>
             </div>
+        </div>
+        <div>
+            <button class="my-3 mx-auto text-white flex showMore mr-auto focus:outline-none text-sm px-4 py-2.5 text-center">
+               مشاهده بیشتر
+            </button>
         </div>
     </div>
 </template>
@@ -47,5 +52,9 @@ export default {
 }
 .price{
     font-size: 13px;
+}
+.showMore{
+    background: #000000;
+    border-radius: 14.5668px;
 }
 </style>
