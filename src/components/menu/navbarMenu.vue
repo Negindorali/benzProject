@@ -7,19 +7,23 @@
                 </button>
             </div>
 
-            <a href="#" class="flex items-center sm:mx-auto md:mx-0">
-                <img src="@/assets/img/logo.png" class="img-fluid" alt="benz Logo">
-                <h1 class="text-white mr-2 hidden md:block">خودرو شاپ</h1>
-            </a>
+            <div class="mx-auto md:mx-0 flex block mx-auto">
+                <a href="#" class="flex">
+                    <img src="@/assets/img/logo.png" class="img-fluid" alt="benz Logo">
+                    <h1 class="text-white mr-2 hidden md:block">خودرو شاپ</h1>
+                </a>
+            </div>
 
-            <menu class="text-white hidden md:block">
-                <ul class="flex gap-6">
-                    <li>صفحه اصلی</li>
-                    <li>خدمات ما</li>
-                    <li>درباره ما</li>
-                    <li>تماس با ما</li>
-                </ul>
-            </menu>
+           <div class="mx-auto text-center">
+               <menu class="text-white hidden md:block">
+                   <ul class="flex gap-5">
+                       <li class="mx-3">صفحه اصلی</li>
+                       <li class="mx-3">خدمات ما</li>
+                       <li class="mx-3">درباره ما</li>
+                       <li class="mx-3">تماس با ما</li>
+                   </ul>
+               </menu>
+           </div>
 
             <div class="flex md:ml-6">
                 <button type="button" data-collapse-toggle="navbar-search" aria-controls="navbar-search"

@@ -2,21 +2,23 @@
     <div>
         <navbar-menu></navbar-menu>
 
-        <carousel-benz></carousel-benz>
+       <div class="container mx-auto">
+           <carousel-benz></carousel-benz>
 
-        <find-car-form></find-car-form>
+           <find-car-form></find-car-form>
 
-        <product-carousel :items="items"></product-carousel>
+           <product-carousel :items="items"></product-carousel>
 
-        <cars-services></cars-services>
+           <cars-services></cars-services>
 
-        <special-products></special-products>
+           <special-products></special-products>
 
-        <call-center></call-center>
+           <call-center></call-center>
 
-        <special-product2></special-product2>
+           <special-product2></special-product2>
 
-        <trust-us></trust-us>
+           <trust-us></trust-us>
+       </div>
 
         <loading-components class="absolute loadingBox z-30 opacity-100" v-if="loading"></loading-components>
 

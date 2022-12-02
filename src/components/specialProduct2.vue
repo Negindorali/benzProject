@@ -1,6 +1,6 @@
 <template>
     <div>
-        <h6 class="mx-7 text-right">محصولات  ویژه</h6>
+        <h5 class="mx-7 text-right font-bold">محصولات  ویژه</h5>
 
         <div class="grid grid-cols-2 md:grid-cols-4 mb-5 items-center px-5 w-full">
             <div :key="index" v-for="(item,index) in services" class="m-2 mainBox overflow-hidden mx-5 my-7 pt-3 cursor-pointer md:p-4 md:pt-12">
@@ -15,7 +15,7 @@
                 </div>
             </div>
         </div>
-        <div>
+        <div class="hidden md:block">
             <button class="my-3 mx-auto text-white flex showMore mr-auto focus:outline-none text-sm px-4 py-2.5 text-center">
                مشاهده بیشتر
             </button>
