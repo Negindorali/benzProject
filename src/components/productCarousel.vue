@@ -54,7 +54,15 @@ export default {
             this.owl = $('.owl-carousel').owlCarousel({
                 margin: 10,
                 rtl: true,
-                loop: true
+                loop: true,
+                responsive:{
+                    0:{
+                        items:3
+                    },
+                    1000:{
+                        items:6
+                    }
+                }
             });
         });
     }

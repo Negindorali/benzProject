@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div id="default-carousel" class="mt-10">
+        <div id="default-carousel" class="mt-10 mx-5">
             <img class="loading rounded-lg mx-auto" :src="item.src" alt="..." v-for="item in items" :key="item.id" :style="item.style">
             <div class="flex gap-1 max-w-fit mt-[-15px] mx-auto z-20 relative">
                 <button type="button" class="rounded-full" :class="{'w-4 h-0.2 bg-white':current===1,'w-1 h-1 bg-white':current!==1}"></button>

@@ -1,18 +1,29 @@
 <template>
     <div>
         <navbar-menu></navbar-menu>
+
         <carousel-benz></carousel-benz>
+
         <find-car-form></find-car-form>
-               <product-carousel :items="items"></product-carousel>
+
+        <product-carousel :items="items"></product-carousel>
+
         <cars-services></cars-services>
+
         <special-products></special-products>
+
         <call-center></call-center>
+
         <special-product2></special-product2>
+
         <trust-us></trust-us>
+
         <loading-components class="absolute loadingBox z-30 opacity-100" v-if="loading"></loading-components>
+
         <transition name="fade" mode="out-in">
             <router-view/>
         </transition>
+
         <footer-box></footer-box>
     </div>
 </template>
