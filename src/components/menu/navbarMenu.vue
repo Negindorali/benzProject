@@ -1,6 +1,6 @@
 <template>
     <div class="navbarBg">
-        <div class="flex flex-wrap justify-between md:justify-between md:p-2 md:mr-5 items-center md:py-6">
+        <div class="flex flex-wrap justify-between md:justify-between md:p-2 px-2 md:mr-5 items-center md:py-6">
             <div class="flex md:hidden">
                 <button @click="isHidden =true" type="button" class="inline-flex items-center cursor-pointer p-2 text-sm rounded-lg">
                     <img alt="Menu" src="@/assets/img/Menu.svg">
@@ -9,18 +9,20 @@
 
             <div class="mx-auto md:mx-0 flex block mx-auto">
                 <a href="#" class="flex">
-                    <img src="@/assets/img/logo.png" class="img-fluid" alt="benz Logo">
-                    <h1 class="text-white mr-2 hidden md:block">خودرو شاپ</h1>
+                    <img src="@/assets/img/logo.png" class="img-fluid mt-2" alt="benz Logo">
+                    <h1 class="text-white mr-2 mt-3 hidden md:block">خودرو شاپ</h1>
                 </a>
             </div>
 
-           <div class="mx-auto text-center">
-               <menu class="text-white hidden md:block">
+           <div class="mx-auto text-center hidden md:block">
+               <menu class="text-white">
                    <ul class="flex gap-5">
-                       <li class="mx-3">صفحه اصلی</li>
-                       <li class="mx-3">خدمات ما</li>
-                       <li class="mx-3">درباره ما</li>
-                       <li class="mx-3">تماس با ما</li>
+                       <li @click="activeTab(items.value)" class="mx-3" v-for="(items,index) in menuTabs" :key="index">
+                           {{items.name}}
+                          <transition name="show">
+                              <hr class="h-px bg-white mx-auto mt-1.5 border-0" v-if="items.hide" :key="items.value">
+                          </transition>
+                       </li>
                    </ul>
                </menu>
            </div>
@@ -43,11 +45,9 @@
                 </button>
             </div>
 
-            <!--            <div class="justify-between asideMenu items-center w-full" id="navbar-search">-->
-            <!--                <transition name="fade">-->
-            <!--                    &lt;!&ndash;                        <menu-aside :close-menu="()=>{isHidden=false}" v-if="isHidden"></menu-aside>&ndash;&gt;-->
-            <!--                </transition>-->
-            <!--            </div>-->
+            <transition name="show">
+                <menu-aside :close-menu="()=>{isHidden=false}" v-if="isHidden"></menu-aside>
+            </transition>
         </div>
 
         <div class="w-full py-5 px-5 block md:hidden">
@@ -66,13 +66,39 @@
 
 <script>
 
+import MenuAside from "@/components/menu/menu";
 export default {
     name: "navbarMenu",
+    components: {MenuAside},
     data() {
         return {
-            isHidden: false
+            isHidden: false,
+            menuTabs:[
+                {name:'صفحه اصلی',value:'mainPage',hide:false},
+                {name:'خدمات ما',value:'ourServices',hide:false},
+                {name:'درباره ما',value:'aboutUs',hide:false},
+                {name:'تماس با ما',value:'contactUS',hide:false},
+            ],
+            currentTab:'mainPage'
         }
     },
+    watch: {
+        currentTab: {
+            immediate: true,
+            handler(newValue, oldValue) {
+                this.menuTabs.find((x) => x.value === newValue).hide = true;
+
+                if (oldValue)
+                    this.menuTabs.find((x) => x.value === oldValue).hide = false;
+            }
+        }
+    },
+    methods:{
+        activeTab(name) {
+            this.currentTab = name;
+        }
+    }
+
 }
 </script>
 
@@ -83,5 +109,21 @@ export default {
 }
 #simple-search{
     border-radius: 12px!important;
+}
+.show-enter-active,
+.show-leave-enter {
+    transform: translateX(0);
+    transition: all .3s linear;
+}
+.show-enter,
+.show-leave-to {
+    transform: translateX(100%);
+    transition: all .3s linear;
+}
+
+hr{
+    width: 11px;
+    height: 3.5px;
+    border-radius: 8px;
 }
 </style>
