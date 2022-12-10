@@ -17,12 +17,14 @@
            <div class="mx-auto text-center hidden md:block">
                <menu class="text-white">
                    <ul class="flex gap-5">
-                       <li @click="activeTab(items.value)" class="mx-3" v-for="(items,index) in menuTabs" :key="index">
-                           {{items.name}}
-                          <transition name="show">
-                              <hr class="h-px bg-white mx-auto mt-1.5 border-0" v-if="items.hide" :key="items.value">
-                          </transition>
-                       </li>
+                      <router-link :to="{name:items.link}" v-for="(items,index) in menuTabs" :key="index">
+                          <li @click="activeTab(items.value)" class="mx-3">
+                              {{items.name}}
+                              <transition name="show">
+                                  <hr class="h-px bg-white mx-auto mt-1.5 border-0" v-if="items.hide" :key="items.value">
+                              </transition>
+                          </li>
+                      </router-link>
                    </ul>
                </menu>
            </div>
@@ -74,10 +76,10 @@ export default {
         return {
             isHidden: false,
             menuTabs:[
-                {name:'صفحه اصلی',value:'mainPage',hide:false},
-                {name:'خدمات ما',value:'ourServices',hide:false},
-                {name:'درباره ما',value:'aboutUs',hide:false},
-                {name:'تماس با ما',value:'contactUS',hide:false},
+                {name:'صفحه اصلی',value:'mainPage',hide:false,link:'home'},
+                {name:'خدمات ما',value:'ourServices',hide:false,link:''},
+                {name:'درباره ما',value:'aboutUs',hide:false,link:''},
+                {name:'تماس با ما',value:'contactUS',hide:false,link:''},
             ],
             currentTab:'mainPage'
         }

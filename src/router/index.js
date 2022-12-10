@@ -8,7 +8,22 @@ const routes = [
   {
     path: '/',
     name: 'home',
-    component: HomeView
+    redirect:'/home',
+    component: HomeView,
+    children: [
+      {
+        path: "/home",
+        name: "Home",
+        meta: {transition: 'slide-left'},
+        component: () => import("../views/pages/mainPage")
+      },
+      {
+        path: "/refill",
+        name: "refill",
+        meta: {transition: 'slide-left'},
+        component: () => import("../views/pages/refill/refillCars")
+      },
+    ]
   },
 ]
 

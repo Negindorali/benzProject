@@ -12,7 +12,7 @@ Vue.config.productionTip = false
 Vue.use(VueCarousel)
 
 export const Axios = axios.create({
-  baseURL: process.env.VUE_APP_URL,
+  baseURL: '',
   timeout: 15000,
   headers: {
     Authorization:'Bearer ' + localStorage.getItem("user"),
