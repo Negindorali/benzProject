@@ -19,10 +19,10 @@ export default {
     data() {
         return {
             services: [
-                {link: 'refill', serviceID: '', desc: 'امداد اورژانسی', img: require('@/assets/img/Rectangle38.png')},
+                {link: 'emergencyAid', serviceID: '', desc: 'امداد اورژانسی', img: require('@/assets/img/Rectangle38.png')},
                 {link: 'refill', serviceID: '', desc: 'امداد حمل', img: require('@/assets/img/Rectangle39.png')},
-                {link: 'refill', serviceID: '', desc: 'سرویس در محل', img: require('@/assets/img/Rectangle40.png')},
-                {link: 'refill', serviceID: '', desc: 'خدمات تعمیرگاهی', img: require('@/assets/img/Rectangle37.png')},
+                {link: 'siteService', serviceID: '', desc: 'سرویس در محل', img: require('@/assets/img/Rectangle40.png')},
+                {link: 'repairService', serviceID: '', desc: 'خدمات تعمیرگاهی', img: require('@/assets/img/Rectangle37.png')},
             ]
         }
     }

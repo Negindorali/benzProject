@@ -23,6 +23,24 @@ const routes = [
         meta: {transition: 'slide-left'},
         component: () => import("../views/pages/refill/refillCars")
       },
+      {
+        path: "/emergency/aid",
+        name: "emergencyAid",
+        meta: {transition: 'slide-left'},
+        component: () => import("../views/pages/Emergency aid/EmergencyAid")
+      },
+      {
+        path: "/onsite/service",
+        name: "siteService",
+        meta: {transition: 'slide-left'},
+        component: () => import("../views/pages/On-siteService/on-siteService")
+      },
+      {
+        path: "/repair/service",
+        name: "repairService",
+        meta: {transition: 'slide-left'},
+        component: () => import("../views/pages/repairService/repairService")
+      },
     ]
   },
 ]
