@@ -1,7 +1,7 @@
 <template>
     <div>
         <h6 class="mx-auto text-center pt-10 font-bold">سرویس در محل</h6>
-        <div class="w-full p-5 flex pt-20 flex-wrap -mx-3">
+        <div class="w-full p-5 flex pt-20 flex-wrap mx-3">
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-10">
             <div class="mb-6">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">

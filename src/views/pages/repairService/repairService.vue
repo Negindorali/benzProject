@@ -1,7 +1,7 @@
 <template>
     <div>
         <h6 class="mx-auto text-center pt-10 font-bold">خدمات تعمیرگاهی</h6>
-        <div class="w-full p-5 flex pt-20 flex-wrap -mx-3">
+        <div class="w-full p-5 flex pt-20 flex-wrap mx-3">
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-10">
             <div class="mb-6">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
@@ -61,7 +61,8 @@
         </div>
         <div class="w-full px-3 mb-6 md:mb-10">
             <div style="height: 450px;">
-                <p class="pb-5">تعمیرگاه های منتخب : </p>
+                <p class="pb-4">تعمیرگاه های منتخب : </p>
+                <span class="py-2" style="font-size: 10px">توجه ! : مکان های مشخص شده روی نقشه ، شعبات تعمیرگاه ها هستند.</span>
                 <mapir :apiKey="mapirToken">
                     <mapNavigationControl position="top-right"/>
                     <mapGeolocateControl position="top-right"/>
@@ -85,7 +86,7 @@
                     </mapMarker>
                     <mapMarker
                             :coordinates.sync="destCoordinate"
-                            color="blue"
+                            color="red"
                     >
                         <mapPopup anchor="right" style="height: 250px!important;">
                             <div class="flex text-right flex-col w-full p-6">
