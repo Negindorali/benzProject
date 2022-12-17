@@ -1,15 +1,17 @@
 <template>
-    <div class="w-full p-5 flex flex-wrap -mx-3">
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-            <div class="mb-6">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
-                    نام و نام خانوادگی
-                </label>
-                <input v-model="name"
-                       class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="name" type="text" placeholder="متال : محمد یاریان">
+    <div>
+        <h6 class="mx-auto text-center pt-10 font-bold">امداد اورژانسی</h6>
+        <div class="w-full p-5 flex pt-20 flex-wrap -mx-3">
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
+                        نام و نام خانوادگی
+                    </label>
+                    <input v-model="name"
+                           class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
+                           id="name" type="text" placeholder="مثال : محمد یاریان">
+                </div>
             </div>
-        </div>
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
             <div class="mb-6">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
@@ -17,7 +19,7 @@
                 </label>
                 <input v-model="phone"
                        class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="phone" type="text" placeholder="متال : ۰۹۹۱۳۷۷۹۰۵۶">
+                       id="phone" type="text" placeholder="مثال : ۰۹۹۱۳۷۷۹۰۵۶">
             </div>
         </div>
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -27,7 +29,7 @@
                 </label>
                 <input v-model="confirmCode"
                        class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="confirmCode" type="text" placeholder="متال : ۴۴۵۶">
+                       id="confirmCode" type="text" placeholder="مثال : ۴۴۵۶">
             </div>
         </div>
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -48,7 +50,7 @@
                 </label>
                 <input v-model="carType"
                        class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="carType" type="text" placeholder="متال : نیسان">
+                       id="carType" type="text" placeholder="مثال : نیسان">
             </div>
         </div>
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
@@ -58,7 +60,7 @@
                 </label>
                 <input v-model="carModel"
                        class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="carModel" type="text" placeholder="متال : مدل ۸۶">
+                       id="carModel" type="text" placeholder="مثال : مدل ۸۶">
             </div>
         </div>
         <div class="w-full px-3 mb-6 md:mb-0">
@@ -85,7 +87,9 @@
                 </mapir>
             </div>
         </div>
+        </div>
     </div>
+
 </template>
 
 <script>

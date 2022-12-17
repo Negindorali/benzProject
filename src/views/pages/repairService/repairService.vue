@@ -1,5 +1,7 @@
 <template>
-    <div class="w-full p-5 flex flex-wrap -mx-3">
+    <div>
+        <h6 class="mx-auto text-center pt-10 font-bold">خدمات تعمیرگاهی</h6>
+        <div class="w-full p-5 flex pt-20 flex-wrap -mx-3">
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-10">
             <div class="mb-6">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
@@ -7,7 +9,7 @@
                 </label>
                 <input v-model="name"
                        class="rounded-none focus:outline-none rounded-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="name" type="text" placeholder="متال : محمد یاریان">
+                       id="name" type="text" placeholder="مثال : محمد یاریان">
             </div>
         </div>
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-10">
@@ -17,7 +19,7 @@
                 </label>
                 <input v-model="phone"
                        class="rounded-none focus:outline-none rounded-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="phone" type="text" placeholder="متال : ۰۹۹۱۳۷۷۹۰۵۶">
+                       id="phone" type="text" placeholder="مثال : ۰۹۹۱۳۷۷۹۰۵۶">
             </div>
         </div>
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-10">
@@ -27,11 +29,11 @@
                 </label>
                 <input v-model="confirmCode"
                        class="rounded-none focus:outline-none rounded-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="confirmCode" type="text" placeholder="متال : ۴۴۵۶">
+                       id="confirmCode" type="text" placeholder="مثال : ۴۴۵۶">
             </div>
         </div>
-        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-10">
-            <div class="mb-6">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-5">
+            <div class="mb-3">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="description">
                     توضیحات
                 </label>
@@ -42,8 +44,8 @@
                         rows="5"></textarea>
             </div>
         </div>
-        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-10">
-            <div class="mb-6">
+        <div class="w-full md:w-1/2 px-3 mb-6 md:mb-5">
+            <div class="mb-3">
                 <label for="reason" class="block mb-2 text-sm font-medium text-gray-900 ">سرویس های درخواستی</label>
                 <select id="reason"
                         class="bg-gray-50 focus:outline-none rounded-lg bg-gray-50 text-gray-900 text-gray-900 text-sm rounded-lg  block w-full p-2.5">
@@ -58,60 +60,56 @@
             </div>
         </div>
         <div class="w-full px-3 mb-6 md:mb-10">
-            <div class="mb-6">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="destination">
-                    مقصد
-                </label>
-                <input v-model="destination"
-                       class="rounded-none focus:outline-none rounded-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="destination" type="text" placeholder="با کلیک روی مقصد مکان موردنظرتان را وارد کنید.">
-            </div>
-            <div style="height: 400px;">
-
+            <div style="height: 450px;">
+                <p class="pb-5">تعمیرگاه های منتخب : </p>
                 <mapir :apiKey="mapirToken">
                     <mapNavigationControl position="top-right"/>
                     <mapGeolocateControl position="top-right"/>
                     <mapMarker
-                            :coordinates.sync="destCoordinate"
-                            color="red"
-                            @click="getDestination"
-                            :draggable="true"
-                            @dragend="getDestination"
-                    >
-                        <mapPopup>
-                                <div>Hello, I'm popup!</div>
-                        </mapPopup>
-                    </mapMarker>
-                    <mapMarker
                             :coordinates.sync="coordinates"
-                            color="blue"
-                            @click="getDestination"
-                            :draggable="true"
-                            @dragend="getDestination"
+                            color="red"
                     >
-                        <mapPopup>
-                            <div>Hello, I'm popup!</div>
+                        <mapPopup anchor="right" style="height: 250px!important;">
+                            <div class="flex text-right flex-col w-full p-6">
+                                <img class="w-[45px] h-[45px] rounded-full"
+                                     src="@/assets/img/logo.png"
+                                     alt="">
+                                <div>
+                                    <h6 class="text-xl font-semibold">محمد صالحی نیا</h6>
+                                    <span class="block pb-2 text-sm">تعمیرگاه خودرو</span>
+                                </div>
+                                <p>آماده ارائه انواع خدمات خودرو</p>
+                                <p>خیابان شیخ کاشانی - ابتدای سه راه - سمت راست</p>
+                            </div>
                         </mapPopup>
                     </mapMarker>
                     <mapMarker
                             :coordinates.sync="destCoordinate"
-                            color="red"
-                            @click="getDestination"
-                            :draggable="true"
-                            @dragend="getDestination"
+                            color="blue"
                     >
-                        <mapPopup>
-                            <div>Hello, I'm popup!</div>
+                        <mapPopup anchor="right" style="height: 250px!important;">
+                            <div class="flex text-right flex-col w-full p-6">
+                                <img class="w-[45px] h-[45px] rounded-full"
+                                     src="@/assets/img/logo.png"
+                                     alt="">
+                                <div>
+                                    <h6 class="text-xl font-semibold">محمد صالحی نیا</h6>
+                                    <span class="block pb-2 text-sm">تعمیرگاه خودرو</span>
+                                </div>
+                                <p>آماده ارائه انواع خدمات خودرو</p>
+                                <p>خیابان شیخ کاشانی - ابتدای سه راه - سمت راست</p>
+                            </div>
                         </mapPopup>
                     </mapMarker>
                 </mapir>
             </div>
         </div>
     </div>
+    </div>
 </template>
 
 <script>
-import {mapGeolocateControl,mapPopup, mapir, mapMarker, mapNavigationControl} from "mapir-vue";
+import {mapGeolocateControl, mapir, mapMarker, mapNavigationControl, mapPopup} from "mapir-vue";
 import axios from "axios";
 
 export default {
@@ -125,7 +123,7 @@ export default {
     },
     data(){
         return{
-            coordinates: [51.420296, 35.732379],
+            coordinates: [51.47541023828239,35.77590396664087],
             destCoordinate: [51.420296, 35.732379],
             from: '',
             description: '',
@@ -153,9 +151,6 @@ export default {
             });
         },
     },
-    mounted() {
-        this.getDestination();
-    }
 }
 </script>
 

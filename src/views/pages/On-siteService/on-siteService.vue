@@ -1,5 +1,7 @@
 <template>
-    <div class="w-full p-5 flex flex-wrap -mx-3">
+    <div>
+        <h6 class="mx-auto text-center pt-10 font-bold">سرویس در محل</h6>
+        <div class="w-full p-5 flex pt-20 flex-wrap -mx-3">
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-10">
             <div class="mb-6">
                 <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
@@ -7,7 +9,7 @@
                 </label>
                 <input v-model="name"
                        class="rounded-none focus:outline-none rounded-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="name" type="text" placeholder="متال : محمد یاریان">
+                       id="name" type="text" placeholder="مثال : محمد یاریان">
             </div>
         </div>
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-10">
@@ -17,7 +19,7 @@
                 </label>
                 <input v-model="phone"
                        class="rounded-none focus:outline-none rounded-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="phone" type="text" placeholder="متال : ۰۹۹۱۳۷۷۹۰۵۶">
+                       id="phone" type="text" placeholder="مثال : ۰۹۹۱۳۷۷۹۰۵۶">
             </div>
         </div>
         <div class="w-full md:w-1/3 px-3 mb-6 md:mb-10">
@@ -27,7 +29,7 @@
                 </label>
                 <input v-model="confirmCode"
                        class="rounded-none focus:outline-none rounded-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="confirmCode" type="text" placeholder="متال : ۴۴۵۶">
+                       id="confirmCode" type="text" placeholder="مثال : ۴۴۵۶">
             </div>
         </div>
         <div class="w-full md:w-1/2 px-3 mb-6 md:mb-10">
@@ -57,6 +59,7 @@
                 </select>
             </div>
         </div>
+    </div>
     </div>
 </template>
 
