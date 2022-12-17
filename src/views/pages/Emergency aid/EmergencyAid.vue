@@ -12,84 +12,90 @@
                            id="name" type="text" placeholder="مثال : محمد یاریان">
                 </div>
             </div>
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-            <div class="mb-6">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
-                    شماره همراه
-                </label>
-                <input v-model="phone"
-                       class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="phone" type="text" placeholder="مثال : ۰۹۹۱۳۷۷۹۰۵۶">
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
+                        شماره همراه
+                    </label>
+                    <input v-model="phone"
+                           class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
+                           id="phone" type="text" placeholder="مثال : ۰۹۹۱۳۷۷۹۰۵۶">
+                </div>
             </div>
-        </div>
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-            <div class="mb-6">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="confirmCode">
-                    تایید شماره همراه
-                </label>
-                <input v-model="confirmCode"
-                       class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="confirmCode" type="text" placeholder="مثال : ۴۴۵۶">
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="confirmCode">
+                        تایید شماره همراه
+                    </label>
+                    <input v-model="confirmCode"
+                           class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
+                           id="confirmCode" type="text" placeholder="مثال : ۴۴۵۶">
+                </div>
             </div>
-        </div>
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-            <div class="mb-6">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="desc">
-                    توضیحات
-                </label>
-                <textarea
-                        v-model="description"
-                        class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                        id="desc" type="text" placeholder="توضیحات موردنظر خود را وارد کنید." rows="10"></textarea>
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="desc">
+                        توضیحات
+                    </label>
+                    <textarea
+                            v-model="description"
+                            class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
+                            id="desc" type="text" placeholder="توضیحات موردنظر خود را وارد کنید." rows="10"></textarea>
+                </div>
             </div>
-        </div>
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-            <div class="mb-6">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="carType">
-                    نوع ماشین
-                </label>
-                <input v-model="carType"
-                       class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="carType" type="text" placeholder="مثال : نیسان">
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="carType">
+                        نوع ماشین
+                    </label>
+                    <input v-model="carType"
+                           class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
+                           id="carType" type="text" placeholder="مثال : نیسان">
+                </div>
             </div>
-        </div>
-        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
-            <div class="mb-6">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="carModel">
-                    مدل ماشین
-                </label>
-                <input v-model="carModel"
-                       class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="carModel" type="text" placeholder="مثال : مدل ۸۶">
+            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-0">
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="carModel">
+                        مدل ماشین
+                    </label>
+                    <input v-model="carModel"
+                           class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
+                           id="carModel" type="text" placeholder="مثال : مدل ۸۶">
+                </div>
             </div>
-        </div>
-        <div class="w-full px-3 mb-6 md:mb-0">
-            <div class="mb-6">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="from">
-                    ادرس ماشین
-                </label>
-                <input v-model="carAddress"
-                       class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="from" type="text" placeholder="با کلیک روی مبدا مکان موردنظرتان را وارد کنید.">
-            </div>
-            <div style="height: 400px;">
+            <div class="w-full px-3 mb-6 md:mb-0">
+                <div class="mb-6">
+                    <label class="block text-gray-700 text-sm font-bold mb-2" for="from">
+                        ادرس ماشین
+                    </label>
+                    <input v-model="carAddress"
+                           class="rounded-none focus:outline-none rounded-r-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
+                           id="from" type="text" placeholder="با کلیک روی مبدا مکان موردنظرتان را وارد کنید.">
+                </div>
+                <div style="height: 400px;">
 
-                <mapir :apiKey="mapirToken">
-                    <mapNavigationControl position="top-right"/>
-                    <mapGeolocateControl position="top-right"/>
-                    <mapMarker
-                            :coordinates.sync="coordinates"
-                            color="blue"
-                            @click="getlatLng"
-                            :draggable="true"
-                            @dragend="getlatLng"
-                    />
-                </mapir>
+                    <mapir :apiKey="mapirToken">
+                        <mapNavigationControl position="top-right"/>
+                        <mapGeolocateControl position="top-right"/>
+                        <mapMarker
+                                :coordinates.sync="coordinates"
+                                color="blue"
+                                @click="getlatLng"
+                                :draggable="true"
+                                @dragend="getlatLng"
+                        />
+                    </mapir>
+                </div>
             </div>
         </div>
+
+        <div class="w-full p-5 flex pt-20 flex-wrap">
+            <button @click="$toast('درخواست شما با موفقیت ثبت شد.',null,'success',3500)"
+                    class="text-white mt-5 searchBtn focus:outline-none text-sm px-5 mr-auto py-2.5 text-center">
+                ثبت درخواست
+            </button>
         </div>
     </div>
-
 </template>
 
 <script>
@@ -145,5 +151,8 @@ export default {
 </script>
 
 <style scoped>
-
+.searchBtn {
+    background: #000000;
+    border-radius: 12px;
+}
 </style>

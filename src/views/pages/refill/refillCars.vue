@@ -104,6 +104,13 @@
                         </mapir>
                     </div>
                 </div>
+
+                <div class="w-full p-5 flex pt-20 flex-wrap">
+                    <button @click="$toast('درخواست شما با موفقیت ثبت شد.',null,'success',3500)"
+                            class="text-white mt-5 searchBtn focus:outline-none text-sm px-5 mr-auto py-2.5 text-center">
+                        ثبت درخواست
+                    </button>
+                </div>
             </div>
         </div>
     </div>
@@ -174,3 +181,10 @@ export default {
     }
 };
 </script>
+
+<style scoped>
+.searchBtn {
+    background: #000000;
+    border-radius: 12px;
+}
+</style>
