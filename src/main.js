@@ -6,6 +6,7 @@ import axios from "axios"
 import "@/assets/css/style.css"
 import './assets/tailwind.css'
 import VueCarousel from 'vue-carousel';
+import './components/toast';
 
 Vue.config.productionTip = false
 

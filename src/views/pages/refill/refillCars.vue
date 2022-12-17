@@ -1,8 +1,8 @@
 <template>
     <div>
         <h6 class="mx-auto text-center pt-10 font-bold">امداد حمل</h6>
-        <div class="w-full p-5 flex pt-20 flex-wrap mx-3">
-            <div class="w-full p-5 flex flex-wrap -mx-3">
+        <div class="w-full p-5 flex pt-20 flex-wrap">
+            <div class="w-full p-5 flex flex-wrap">
                 <div class="w-full md:w-1/3 px-3 mb-6 md:mb-10">
                     <div class="mb-6">
                         <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
@@ -97,6 +97,13 @@
                             />
                         </mapir>
                     </div>
+                </div>
+
+                <div class="w-full p-5 flex pt-20 flex-wrap">
+                    <button @click="$toast('درخواست شما با موفقیت ثبت شد.',null,'success',3500)"
+                            class="text-white mt-5 searchBtn focus:outline-none text-sm px-5 mr-auto py-2.5 text-center">
+                        ثبت درخواست
+                    </button>
                 </div>
             </div>
         </div>
@@ -202,3 +209,10 @@ export default {
     }
 };
 </script>
+
+<style scoped>
+.searchBtn {
+    background: #000000;
+    border-radius: 12px;
+}
+</style>
