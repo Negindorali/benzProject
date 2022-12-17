@@ -1,7 +1,7 @@
 <template>
     <div>
         <h6 class="mx-auto text-center pt-10 font-bold">امداد حمل</h6>
-        <div class="w-full p-5 flex pt-20 flex-wrap -mx-3">
+        <div class="w-full p-5 flex pt-20 flex-wrap mx-3">
             <div class="w-full p-5 flex flex-wrap -mx-3">
                 <div class="w-full md:w-1/3 px-3 mb-6 md:mb-10">
                     <div class="mb-6">
@@ -66,15 +66,12 @@
                     </div>
                     <div style="height: 400px;">
 
-                        <mapir :apiKey="mapirToken">
+                        <mapir :apiKey="mapirToken" @click="getlatLng">
                             <mapNavigationControl position="top-right"/>
                             <mapGeolocateControl position="top-right"/>
                             <mapMarker
                                     :coordinates.sync="coordinates"
                                     color="blue"
-                                    @click="getlatLng"
-                                    :draggable="true"
-                                    @dragend="getlatLng"
                             />
                         </mapir>
                     </div>
@@ -91,15 +88,12 @@
                     </div>
                     <div style="height: 400px;">
 
-                        <mapir :apiKey="mapirToken">
+                        <mapir :apiKey="mapirToken" @click="getDestination">
                             <mapNavigationControl position="top-right"/>
                             <mapGeolocateControl position="top-right"/>
                             <mapMarker
                                     :coordinates.sync="destCoordinate"
                                     color="red"
-                                    @click="getDestination"
-                                    :draggable="true"
-                                    @dragend="getDestination"
                             />
                         </mapir>
                     </div>
@@ -141,7 +135,8 @@ export default {
         };
     },
     methods: {
-        getlatLng() {
+        getlatLng(e) {
+            this.coordinates = Object.values(e.actualEvent.lngLat)
             axios({
                 method: 'GET',
                 baseURL: 'https://map.ir/reverse',
@@ -157,7 +152,40 @@ export default {
                 this.from = response.data.address
             });
         },
-        getDestination() {
+        getlatLngs() {
+            axios({
+                method: 'GET',
+                baseURL: 'https://map.ir/reverse',
+                params: {lat: this.coordinates[1], lon: this.coordinates[0]},
+                timeout: 15000,
+                headers: {
+                    'x-api-key': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImZhZjI0ZjA0Y2U2NTQ2ZDAyYzMwNjBmMzAxYWY0NTMxYjhkOTEwODVhMDQ3MGY1ZDc3YjYwY2M4OGRiNjVkZjZkMjIyZWNkZjNmMTJkYmExIn0.eyJhdWQiOiIyMDI5NSIsImp0aSI6ImZhZjI0ZjA0Y2U2NTQ2ZDAyYzMwNjBmMzAxYWY0NTMxYjhkOTEwODVhMDQ3MGY1ZDc3YjYwY2M4OGRiNjVkZjZkMjIyZWNkZjNmMTJkYmExIiwiaWF0IjoxNjcwNjg5MDc4LCJuYmYiOjE2NzA2ODkwNzgsImV4cCI6MTY3MzE5NDY3OCwic3ViIjoiIiwic2NvcGVzIjpbImJhc2ljIl19.h-KYgigwSQbp9KYjIjWgBLQRpMy6ABa40dyF4pF99UmndnhDNs-fckFePIdRPkm7GlggWm9yKphj_TJ5b9TyA8m1_gNarjRiPzhAS5ZNGNUaSfnGHA1cUbc71DuUKgohAe2sOmXUkKin0q-ErzDdCczJjLVc218dRkCxLuJIrAY5yZ5yVgK79-Q6misDYP3yLpWaV5uDA3a1VzXppq4G9hm0GCGmsef_WryEx9z1fFuOzoVbuNj2yEKn3mBi2vAyKvV1HRMKMoXy_KLTk8xy-GsSQArOxKvw4Nk8Nvuks0WzSlLygNncQozltpm5Z4kueep-0TrI4xzx6uSjuk20vg',
+                    Accept: 'application/json',
+                    "Access-Control-Allow-Origin": "*",
+                    'Content-Type': 'application/json',
+                }
+            }).then((response) => {
+                this.from = response.data.address
+            });
+        },
+        getDestinations() {
+            axios({
+                method: 'GET',
+                baseURL: 'https://map.ir/reverse',
+                params: {lat: this.destCoordinate[1], lon: this.destCoordinate[0]},
+                timeout: 15000,
+                headers: {
+                    'x-api-key': 'eyJ0eXAiOiJKV1QiLCJhbGciOiJSUzI1NiIsImp0aSI6ImZhZjI0ZjA0Y2U2NTQ2ZDAyYzMwNjBmMzAxYWY0NTMxYjhkOTEwODVhMDQ3MGY1ZDc3YjYwY2M4OGRiNjVkZjZkMjIyZWNkZjNmMTJkYmExIn0.eyJhdWQiOiIyMDI5NSIsImp0aSI6ImZhZjI0ZjA0Y2U2NTQ2ZDAyYzMwNjBmMzAxYWY0NTMxYjhkOTEwODVhMDQ3MGY1ZDc3YjYwY2M4OGRiNjVkZjZkMjIyZWNkZjNmMTJkYmExIiwiaWF0IjoxNjcwNjg5MDc4LCJuYmYiOjE2NzA2ODkwNzgsImV4cCI6MTY3MzE5NDY3OCwic3ViIjoiIiwic2NvcGVzIjpbImJhc2ljIl19.h-KYgigwSQbp9KYjIjWgBLQRpMy6ABa40dyF4pF99UmndnhDNs-fckFePIdRPkm7GlggWm9yKphj_TJ5b9TyA8m1_gNarjRiPzhAS5ZNGNUaSfnGHA1cUbc71DuUKgohAe2sOmXUkKin0q-ErzDdCczJjLVc218dRkCxLuJIrAY5yZ5yVgK79-Q6misDYP3yLpWaV5uDA3a1VzXppq4G9hm0GCGmsef_WryEx9z1fFuOzoVbuNj2yEKn3mBi2vAyKvV1HRMKMoXy_KLTk8xy-GsSQArOxKvw4Nk8Nvuks0WzSlLygNncQozltpm5Z4kueep-0TrI4xzx6uSjuk20vg',
+                    Accept: 'application/json',
+                    "Access-Control-Allow-Origin": "*",
+                    'Content-Type': 'application/json',
+                }
+            }).then((response) => {
+                this.destination = response.data.address
+            });
+        },
+        getDestination(e) {
+            this.destCoordinate = Object.values(e.actualEvent.lngLat)
             axios({
                 method: 'GET',
                 baseURL: 'https://map.ir/reverse',
@@ -176,8 +204,8 @@ export default {
 
     },
     mounted() {
-        this.getlatLng();
-        this.getDestination();
+        this.getlatLngs();
+        this.getDestinations();
     }
 };
 </script>

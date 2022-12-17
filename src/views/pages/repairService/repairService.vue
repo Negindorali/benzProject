@@ -1,16 +1,15 @@
 <template>
     <div>
         <h6 class="mx-auto text-center pt-10 font-bold">خدمات تعمیرگاهی</h6>
-        <div class="w-full p-5 flex pt-20 flex-wrap -mx-3">
-            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-10">
-                <div class="mb-6">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
-                        نام و نام خانوادگی
-                    </label>
-                    <input v-model="name"
-                           class="rounded-none focus:outline-none rounded-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                           id="name" type="text" placeholder="مثال : محمد یاریان">
-                </div>
+        <div class="w-full p-5 flex pt-20 flex-wrap mx-3">
+        <div class="w-full md:w-1/3 px-3 mb-6 md:mb-10">
+            <div class="mb-6">
+                <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
+                    نام و نام خانوادگی
+                </label>
+                <input v-model="name"
+                       class="rounded-none focus:outline-none rounded-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
+                       id="name" type="text" placeholder="مثال : محمد یاریان">
             </div>
             <div class="w-full md:w-1/3 px-3 mb-6 md:mb-10">
                 <div class="mb-6">
@@ -59,45 +58,43 @@
                     </select>
                 </div>
             </div>
-            <div class="w-full px-3 mb-6 md:mb-10">
-                <div style="height: 450px;">
-                    <p class="pb-5">تعمیرگاه های منتخب : </p>
-                    <mapir :apiKey="mapirToken">
-                        <mapNavigationControl position="top-right"/>
-                        <mapGeolocateControl position="top-right"/>
-                        <mapMarker
-                                :coordinates.sync="coordinates"
-                                color="red"
-                        >
-                            <mapPopup anchor="right" style="height: 250px!important;">
-                                <div class="flex text-right flex-col w-full p-6">
-                                    <img class="w-[45px] h-[45px] rounded-full"
-                                         src="@/assets/img/logo.png"
-                                         alt="">
-                                    <div>
-                                        <h6 class="text-xl font-semibold">محمد صالحی نیا</h6>
-                                        <span class="block pb-2 text-sm">تعمیرگاه خودرو</span>
-                                    </div>
-                                    <p>آماده ارائه انواع خدمات خودرو</p>
-                                    <p>خیابان شیخ کاشانی - ابتدای سه راه - سمت راست</p>
+        <div class="w-full px-3 mb-6 md:mb-10">
+            <div style="height: 450px;">
+                <p class="pb-4">تعمیرگاه های منتخب : </p>
+                <span class="py-2" style="font-size: 10px">توجه ! : مکان های مشخص شده روی نقشه ، شعبات تعمیرگاه ها هستند.</span>
+                <mapir :apiKey="mapirToken">
+                    <mapNavigationControl position="top-right"/>
+                    <mapGeolocateControl position="top-right"/>
+                    <mapMarker
+                            :coordinates.sync="coordinates"
+                            color="red"
+                    >
+                        <mapPopup anchor="right" style="height: 250px!important;">
+                            <div class="flex text-right flex-col w-full p-6">
+                                <img class="w-[45px] h-[45px] rounded-full"
+                                     src="@/assets/img/logo.png"
+                                     alt="">
+                                <div>
+                                    <h6 class="text-xl font-semibold">محمد صالحی نیا</h6>
+                                    <span class="block pb-2 text-sm">تعمیرگاه خودرو</span>
                                 </div>
-                            </mapPopup>
-                        </mapMarker>
-                        <mapMarker
-                                :coordinates.sync="destCoordinate"
-                                color="blue"
-                        >
-                            <mapPopup anchor="right" style="height: 250px!important;">
-                                <div class="flex text-right flex-col w-full p-6">
-                                    <img class="w-[45px] h-[45px] rounded-full"
-                                         src="@/assets/img/logo.png"
-                                         alt="">
-                                    <div>
-                                        <h6 class="text-xl font-semibold">محمد صالحی نیا</h6>
-                                        <span class="block pb-2 text-sm">تعمیرگاه خودرو</span>
-                                    </div>
-                                    <p>آماده ارائه انواع خدمات خودرو</p>
-                                    <p>خیابان شیخ کاشانی - ابتدای سه راه - سمت راست</p>
+                                <p>آماده ارائه انواع خدمات خودرو</p>
+                                <p>خیابان شیخ کاشانی - ابتدای سه راه - سمت راست</p>
+                            </div>
+                        </mapPopup>
+                    </mapMarker>
+                    <mapMarker
+                            :coordinates.sync="destCoordinate"
+                            color="red"
+                    >
+                        <mapPopup anchor="right" style="height: 250px!important;">
+                            <div class="flex text-right flex-col w-full p-6">
+                                <img class="w-[45px] h-[45px] rounded-full"
+                                     src="@/assets/img/logo.png"
+                                     alt="">
+                                <div>
+                                    <h6 class="text-xl font-semibold">محمد صالحی نیا</h6>
+                                    <span class="block pb-2 text-sm">تعمیرگاه خودرو</span>
                                 </div>
                             </mapPopup>
                         </mapMarker>
