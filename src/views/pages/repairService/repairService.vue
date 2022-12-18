@@ -3,15 +3,17 @@
         <h6 class="mx-auto text-center pt-10 font-bold">خدمات تعمیرگاهی</h6>
         <div class="w-full p-5 flex pt-20 flex-wrap">
             <div class="w-full p-5 flex flex-wrap">
-            <div class="mb-6">
-                <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
-                    نام و نام خانوادگی
-                </label>
-                <input v-model="name"
-                       class="rounded-none focus:outline-none rounded-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                       id="name" type="text" placeholder="مثال : محمد یاریان">
-            </div>
-            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-10">
+                <div class="w-full md:w-1/2 px-3 mb-6 md:mb-10">
+                    <div class="mb-6">
+                        <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
+                            نام و نام خانوادگی
+                        </label>
+                        <input v-model="name"
+                               class="rounded-none focus:outline-none rounded-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
+                               id="name" type="text" placeholder="مثال : محمد یاریان">
+                    </div>
+                </div>
+            <div class="w-full md:w-1/2 px-3 mb-6 md:mb-10">
                 <div class="mb-6">
                     <label class="block text-gray-700 text-sm font-bold mb-2" for="phone">
                         شماره همراه
@@ -19,16 +21,6 @@
                     <input v-model="phone"
                            class="rounded-none focus:outline-none rounded-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
                            id="phone" type="text" placeholder="مثال : ۰۹۹۱۳۷۷۹۰۵۶">
-                </div>
-            </div>
-            <div class="w-full md:w-1/3 px-3 mb-6 md:mb-10">
-                <div class="mb-6">
-                    <label class="block text-gray-700 text-sm font-bold mb-2" for="confirmCode">
-                        تایید شماره همراه
-                    </label>
-                    <input v-model="confirmCode"
-                           class="rounded-none focus:outline-none rounded-lg bg-gray-50 text-gray-900 block flex-1 min-w-0 w-full text-sm border-gray-300 p-2.5"
-                           id="confirmCode" type="text" placeholder="مثال : ۴۴۵۶">
                 </div>
             </div>
             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-5">

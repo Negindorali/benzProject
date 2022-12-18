@@ -54,7 +54,7 @@
 
         <div class="col-span-2 mt-4 md:col-span-3">
             <hr>
-            <h1 class="text-white text-xl md:text-2xl mt-4 text-center">
+            <h1 class="text-white text-[10px] mt-4 text-center">
                 طراحی شده توسط آژانس خلاقیت هنر  رسانه
             </h1>
         </div>
